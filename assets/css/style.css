@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Karla" , sans-serif;
+}
+
+
+
+.asterisk
+{
+    color: hsl(169, 82%, 27%);
+}
+
+body , html 
+{
+    width: 100vw;
+    height: 100vh;
+    background-color:  hsl(169, 82%, 27%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer
+{
+    padding: 20px;
+    border-radius: 20px;
+    /* border: 2px solid red; */
+    min-height: 30%;
+    background-color:hsl(0, 0%, 100%);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.wrapper
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container
+{
+    width: 600px;
+}
+
+header h2
+{
+    font-weight: 700;
+}
+
+#name
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+#name .firstName , #name .lastName
+{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* border: 2px solid red; */
+}
+
+#name .firstName #FirstName , #name .lastName #LastName , #mail #email
+{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid hsl(186, 15%, 59%);
+    outline: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+#name .firstName #FirstName:focus , #name .lastName #LastName:focus , #mail #email:focus
+{
+    border-color: hsl(169, 82%, 27%);
+}
+
+#mail
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#query
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.QueryContainer
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.QueryContainer .queryContainer
+{
+    width: 48%;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid hsl(186, 15%, 59%);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.QueryContainer .queryContainer:has(input:checked)
+{
+    background-color: hsla(169, 82%, 27%, 0.37);
+    border: 1px solid hsl(169, 82%, 27%);
+}
+
+#messageContainer
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    flex-direction: column;
+}
+
+#message
+{
+    resize: none;
+    outline:none;
+    padding: 5px 10px;
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+#consentContainer #consentCheck , #GeneralQuery , #SupportQuery
+{
+    accent-color: hsl(169, 82%, 27%);
+}
+
+
+
+#btnContainer .submitbtn
+{
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: hsl(169, 82%, 27%);
+    border: none;
+    color: white;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.errMessage
+{
+    color:hsl(0, 66%, 54%);
+    font-size: 14px;
+    display: none;
+}
+
+.errBorder
+{
+    border: 1px solid hsl(0, 66%, 54%) !important;
+}
+
+#successContainer
+{
+    z-index: 1000;
+    position:absolute;
+    top:-100%;
+    left: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2px;
+    background-color: hsl(187, 24%, 22%);
+    text-align: justify;
+    word-spacing: 2px;
+    padding: 20px 20px;
+    color: hsl(0, 0%, 100%);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transition:  0.9s all ease-in-out;
+    -webkit-transition:  0.9s all ease-in-out;
+    -moz-transition:  0.9s all ease-in-out;
+    -ms-transition:  0.9s all ease-in-out;
+    -o-transition:  0.9s all ease-in-out;
+}
+
+.successVisibility
+{
+    top: 20px !important;
+}
+
+#successContainer p:has(img)
+{
+    height: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap:2px ;
+}
+
+#successContainer p img
+{
+    width: 20px;
+    height: 20px;
+}
+
+@media only screen and (max-width:450px)
+{
+    .formContainer
+    {
+        /* width: 80vw; */
+        min-height: 60vh;
+    }
+    .wrapper
+    {
+        gap: 0px;
+    }
+
+    .container
+    {
+        width: 300px;
+    }
+
+    #name
+    {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #name .firstName , #name .lastName
+    {
+        width: 100%;
+        gap: 3px;
+    }
+
+    #mail
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+
+    .QueryContainer
+    {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .QueryContainer .queryContainer
+    {
+        width: 100%;
+    }
+
+    .errMessage
+    {
+        font-size: 12px;
+    }
+}
